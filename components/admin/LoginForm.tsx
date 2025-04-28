@@ -3,6 +3,10 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+interface ApiError extends Error {
+  message: string;
+}
+
 export default function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,8 +36,9 @@ export default function LoginForm() {
       // Redirect to admin dashboard on success
       router.push('/admin');
       router.refresh();
-    } catch (err: any) {
-      setError(err.message || 'Login failed');
+    } catch (err: unknown) {
+      const error = err as ApiError;
+      setError(error.message || 'Login failed');
     } finally {
       setIsLoading(false);
     }

@@ -10,6 +10,10 @@ interface Invitation {
   createdAt: string;
 }
 
+interface ApiError extends Error {
+  message: string;
+}
+
 export default function InvitationList({ refreshTrigger }: { refreshTrigger: number }) {
   const [invitations, setInvitations] = useState<Invitation[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -31,8 +35,9 @@ export default function InvitationList({ refreshTrigger }: { refreshTrigger: num
         
         const data = await response.json();
         setInvitations(data);
-      } catch (err: any) {
-        setError(err.message || 'An error occurred');
+      } catch (err: unknown) {
+        const error = err as ApiError;
+        setError(error.message || 'An error occurred');
       } finally {
         setIsLoading(false);
       }

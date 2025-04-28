@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '@/components/LanguageContext';
 import { translations } from '@/components/translations';
+import Image from 'next/image';
 
 export default function BackgroundSection() {
   const { language } = useLanguage();
@@ -34,7 +35,7 @@ export default function BackgroundSection() {
     <section 
       ref={sectionRef}
       className="relative py-36 bg-center bg-cover"
-      style={{ backgroundImage: "url('/images/couple-1.jpeg')" }}
+      style={{ backgroundImage: 'url("/images/couple-1.jpeg")' }}
     >
       <div className="absolute inset-0 bg-dark bg-opacity-60 backdrop-blur-[1px]"></div>
       
@@ -73,7 +74,7 @@ export default function BackgroundSection() {
           </div>
           
           <p className="text-xl md:text-2xl italic font-script mt-8 golden-text fade-on-scroll">
-            "{t.bibleVerse3}"
+            &ldquo;{t.bibleVerse3}&rdquo;
           </p>
           <p className="text-md md:text-lg mt-2 font-elegant fade-on-scroll">
             — {t.bibleReference3}
