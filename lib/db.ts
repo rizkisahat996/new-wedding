@@ -1,22 +1,21 @@
 import { PrismaClient } from '@prisma/client';
 import { slugify } from './utils';
 
-// Create a type-safe PrismaClient singleton
-const prismaClientSingleton = () => {
-  return new PrismaClient();
-};
 
-// Fix the global type declaration
-declare global {
-  // This properly extends the globalThis interface
-  var prisma: ReturnType<typeof prismaClientSingleton> | undefined;
-}
+const globalForPrisma = global as unknown as { prisma: PrismaClient };
+
+export const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient({
+    log: ['query'],
+  });
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
 // Access global using var notation instead of globalThis
 // This is compatible with both Node.js and browsers
-export const prisma = global.prisma ?? prismaClientSingleton();
 
-if (process.env.NODE_ENV !== 'production') global.prisma = prisma;
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
 export async function createInvitation(guestName: string) {
   // Create a slug from the guest name
