@@ -46,9 +46,9 @@ export const translations = {
     // Background Section
     ourLoveStory: "Alfredo & Mei",
     loveStoryPart1:
-      "With humility, praise, thanksgiving and joy for the blessing and love of Jesus Christ,",
+      "After the church blessing ceremony, we request the presence of Ladies and Gentlemen to attend a modest meal and Traditional Ceremony located at Wisma Tosin, Jl. Bunga Terompet Ujung No.139, Simp. Selayang, Kec. Medan Tuntungan, Medan.",
     loveStoryPart2:
-      "We hereby invite you to attend and give your blessing at the Wedding Ceremony of our children: Alfredo & Mei",
+      "For your attendance and blessings, we thank you. May God bless us all.",
 
     // Bible Verse 3
     bibleVerse3:
@@ -111,9 +111,9 @@ export const translations = {
     // Background Section
     ourLoveStory: "Alfredo & Mei",
     loveStoryPart1:
-      "Dengan Hormat, Dengan kerendahan hati dan puji syukur serta sukacita atas berkat dan kasih Tuhan Yesus Kristus,",
+      "Setelah selesai pemberkatan dari gereja kami mengharapkan kehadiran Bapak/Ibu/Saudara/Saudari, untuk menghadiri jamuan makan ala kadarnya dan Acara Adat yang bertempat di `Wisma Tosin, Jl. Bunga terompet Ujung No.139, Sim. Selayang, Kec. Medan Tuntungan, Medan.",
     loveStoryPart2:
-      "Bersama ini kami mengundang Bapak/Ibu/Saudara/i, agar sudi kiranya meringankan langkah untuk menghadiri serta memberikan doa restu pada `Pesta Pemberkatan Pernikahan` Putra Kami: Alfredo & Mei",
+      "Atas kehadiran dan Doa Restu Bapak/ Ibu/ Saudara/ Saudari, kami ucapkan terima kasih. Kiranya Tuhan Memberkati Kita.",
 
     // Bible Verse 3
     bibleVerse3:
