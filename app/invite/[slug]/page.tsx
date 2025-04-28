@@ -10,14 +10,13 @@ import FadeOnScroll from '@/components/utils/FadeOnScroll';
 import LanguageToggle from '@/components/LanguageToggle';
 import { Metadata } from 'next';
 
-interface InvitationPageProps {
-  params: {
-    slug: string;
-  };
+interface PageProps {
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
 // Generate dynamic metadata
-export async function generateMetadata({ params }: InvitationPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const invitation = await getInvitationBySlug(params.slug);
   
   if (!invitation) {
@@ -32,7 +31,7 @@ export async function generateMetadata({ params }: InvitationPageProps): Promise
   };
 }
 
-export default async function InvitationPage({ params }: InvitationPageProps) {
+export default async function InvitationPage({ params }: PageProps) {
   const invitation = await getInvitationBySlug(params.slug);
   
   if (!invitation) {
