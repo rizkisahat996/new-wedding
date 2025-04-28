@@ -8,14 +8,6 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const AUTH_COOKIE_NAME = 'wedding_admin_auth';
 const AUTH_SECRET = process.env.AUTH_SECRET || 'HBTm3qeqnk';
 
-// Function to hash the password
-function hashPassword(password: string): string {
-  return crypto
-    .createHmac('sha256', AUTH_SECRET)
-    .update(password)
-    .digest('hex');
-}
-
 // Improved credential verification with password hashing
 export function verifyCredentials(username: string, password: string): boolean {
   return username === ADMIN_USERNAME && password === ADMIN_PASSWORD;
