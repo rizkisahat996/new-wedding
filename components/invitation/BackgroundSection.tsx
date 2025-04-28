@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '@/components/LanguageContext';
 import { translations } from '@/components/translations';
-import Image from 'next/image';
 
 export default function BackgroundSection() {
   const { language } = useLanguage();
