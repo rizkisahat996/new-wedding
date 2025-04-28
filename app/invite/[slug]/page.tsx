@@ -10,14 +10,13 @@ import FadeOnScroll from '@/components/utils/FadeOnScroll';
 import LanguageToggle from '@/components/LanguageToggle';
 import { Metadata } from 'next';
 
-interface PageProps {
-  params: { slug: string };
-  searchParams: Record<string, string | string[] | undefined>;
-}
+// Define the params type as a Promise
+export type SlugParamsType = Promise<{ slug: string }>;
 
-// Generate dynamic metadata
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const invitation = await getInvitationBySlug(params.slug);
+// Update the metadata generator to use the Promise type
+export async function generateMetadata({ params }: { params: SlugParamsType }): Promise<Metadata> {
+  const { slug } = await params;
+  const invitation = await getInvitationBySlug(slug);
   
   if (!invitation) {
     return {
@@ -27,12 +26,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   return {
     title: `${invitation.guestName} - You're Invited to Alfredo & Mei's Wedding`,
-    description: `${invitation.guestName} is cordially invited to the wedding of Alfredo and Mei. Join us on June 12, 2025.`,
+    description: `${invitation.guestName} is cordially invited to the wedding of Alfredo and Mei.`,
   };
 }
 
-export default async function InvitationPage({ params }: PageProps) {
-  const invitation = await getInvitationBySlug(params.slug);
+// Update the page component to use the Promise type
+export default async function InvitationPage({ params }: { params: SlugParamsType }) {
+  const { slug } = await params;
+  const invitation = await getInvitationBySlug(slug);
   
   if (!invitation) {
     notFound();
