@@ -34,7 +34,7 @@ export const translations = {
 
     // Bible Verse 2
     bibleVerse2: "Therefore what God has joined together, let no one separate.",
-    bibleReference2: "Mark 10:9",
+    bibleReference2: "Matthew 19:6",
 
     // Gallery Section
     ourJourney: "Pre Wedding Photos",
@@ -99,7 +99,7 @@ export const translations = {
     // Bible Verse 2
     bibleVerse2:
       "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia.",
-    bibleReference2: "Markus 10:9",
+    bibleReference2: "Matius 19:6",
 
     // Gallery Section
     ourJourney: "Foto Pre Wedding",
