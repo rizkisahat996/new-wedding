@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   description: 'Login to manage wedding invitations',
 };
 
-export default function LoginPage() {
+export default async function LoginPage() {
   // If already authenticated, redirect to admin dashboard
-  if (isAuthenticated()) {
+  if (await isAuthenticated()) {
     redirect('/admin');
   }
   
