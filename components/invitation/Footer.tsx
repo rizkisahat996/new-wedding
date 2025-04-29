@@ -10,7 +10,6 @@ export default function Footer() {
 
   return (
     <footer className="py-16 bg-dark text-ivory relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-32 h-32 opacity-10">
         <img
           src="https://api.iconify.design/mdi:flower-outline.svg?color=white"

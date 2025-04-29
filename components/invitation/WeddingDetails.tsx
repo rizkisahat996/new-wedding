@@ -10,7 +10,6 @@ export default function WeddingDetails() {
   const t = translations[language];
 
   useEffect(() => {
-    // Observer for fade-in elements
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -19,7 +18,6 @@ export default function WeddingDetails() {
       });
     }, { threshold: 0.2 });
     
-    // Observe all fade elements
     document.querySelectorAll('.fade-on-scroll').forEach(el => {
       observer.observe(el);
     });

@@ -18,7 +18,6 @@ export default function BackgroundSection() {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
       
-      // Only apply parallax effect when section is visible
       if (scrollPosition > sectionTop - window.innerHeight && 
           scrollPosition < sectionTop + sectionHeight) {
         const yValue = (scrollPosition - sectionTop) * 0.4;

@@ -12,7 +12,6 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Verify credentials
     if (!verifyCredentials(username, password)) {
       return NextResponse.json(
         { error: 'Invalid credentials' },
@@ -20,7 +19,6 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Set auth cookie
     setAuthCookie();
     
     return NextResponse.json({ success: true });

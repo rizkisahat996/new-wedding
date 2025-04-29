@@ -17,7 +17,6 @@ export default function Hero({ guestName }: HeroProps) {
   const [sparkles, setSparkles] = useState<{left: string, top: string, delay: string}[]>([]);
 
   useEffect(() => {
-    // Generate random sparkles
     const newSparkles = Array.from({ length: 15 }, () => ({
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
@@ -40,7 +39,6 @@ export default function Hero({ guestName }: HeroProps) {
         />
         <div className="absolute inset-0 bg-dark bg-opacity-50 backdrop-blur-[2px]"></div>
         
-        {/* Sparkle effects */}
         {sparkles.map((sparkle, index) => (
           <div 
             key={index}

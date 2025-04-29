@@ -33,7 +33,6 @@ export default function LoginForm() {
         throw new Error(data.error || 'Invalid credentials');
       }
 
-      // Redirect to admin dashboard on success
       router.push('/admin');
       router.refresh();
     } catch (err: unknown) {

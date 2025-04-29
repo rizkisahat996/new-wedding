@@ -20,7 +20,6 @@ export default function InvitationList({ refreshTrigger }: { refreshTrigger: num
   const [error, setError] = useState('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  // Fetch invitations when component mounts or refreshTrigger changes
   useEffect(() => {
     const fetchInvitations = async () => {
       setIsLoading(true);
@@ -46,7 +45,6 @@ export default function InvitationList({ refreshTrigger }: { refreshTrigger: num
     fetchInvitations();
   }, [refreshTrigger]);
 
-  // Copy invitation URL to clipboard
   const copyToClipboard = (slug: string, id: string) => {
     const url = generateInvitationUrl(slug);
     navigator.clipboard.writeText(url)

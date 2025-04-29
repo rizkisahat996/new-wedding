@@ -8,7 +8,6 @@ export default function InvitationFormWrapper() {
   const [refreshTrigger, setRefreshTrigger] = useState(0);
   
   const handleInvitationCreated = () => {
-    // Increment the refresh trigger to reload the invitation list
     setRefreshTrigger(prev => prev + 1);
   };
   

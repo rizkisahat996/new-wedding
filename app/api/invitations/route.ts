@@ -3,7 +3,6 @@ import { createInvitation, getAllInvitations } from '@/lib/db';
 import { isAuthenticated } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
-  // Check if user is authenticated
   if (!isAuthenticated()) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
@@ -31,7 +30,6 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  // Check if user is authenticated
   if (!isAuthenticated()) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }

@@ -12,16 +12,9 @@ export const prisma =
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
-// Access global using var notation instead of globalThis
-// This is compatible with both Node.js and browsers
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
-
 export async function createInvitation(guestName: string) {
-  // Create a slug from the guest name
   const baseSlug = slugify(guestName);
   
-  // Check if slug already exists, if so, append a number
   let slug = baseSlug;
   let counter = 1;
   
@@ -30,7 +23,6 @@ export async function createInvitation(guestName: string) {
     counter++;
   }
   
-  // Create the invitation
   const invitation = await prisma.invitation.create({
     data: {
       guestName,

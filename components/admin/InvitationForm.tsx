@@ -41,7 +41,6 @@ export default function InvitationForm({ onInvitationCreated }: InvitationFormPr
       setSuccess(`Invitation for "${guestName}" created successfully!`);
       setGuestName('');
       
-      // Notify parent component to refresh list
       onInvitationCreated();
       
     } catch (err: any) {

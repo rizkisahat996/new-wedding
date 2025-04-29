@@ -59,7 +59,6 @@ export default function Gallery() {
                     }}
                   />
                   
-                  {/* Heart icon on hover */}
                   <div 
                     className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300"
                     style={{ opacity: hoveredIndex === index ? 0.7 : 0 }}
